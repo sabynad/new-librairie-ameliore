@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+  
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/img/librairie.jpg');
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    order: -1;
+    width: 100%;
+}
+
+main{
+    width: 80%;
+    min-height: 80vh;
+}
+
+.container, .titre-login {
+    width: 60%;
+    background-color: #7a670aae;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+#fournisseurs div{  /*champs et texte dans formulaire ajout*/
+    color: white;
+    margin-bottom: 1rem; 
+    /* width: 100%; */
+
+}
+
+.nav-link{
+    font-size: 1.5rem;
+}
+
+h1{
+    color: white;
+}
+
+.required{  
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary{
+    background-color: #009490;
+}
+
+.titre-login {
+    color: white;
+    font-size: 2rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    padding: 2rem;
+    color: white;
+    background-color: rgba(80, 78, 78, 0.829);
+}

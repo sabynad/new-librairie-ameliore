@@ -1,0 +1,69 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" >Librairie</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>  
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home</span></a>
+                </li>
+
+
+                {# livre #}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Livres
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/livres">Tous les livres</a></li>
+                        <li><a class="dropdown-item" href="/livres/titre">Livres par titre</a></li>
+                        <li><a class="dropdown-item" href="/livres/editeur">Livres par éditeur</a></li>
+                    </ul>
+                </li>
+
+                    
+
+                {# fournisseur #}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fournisseurs</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/fournisseurs">Tous les fournisseurs</a></li>
+                        <li><a class="dropdown-item" href="/fournisseurs/raisonsociale">Nom des fournisseurs</a></li>
+                        <li><a class="dropdown-item" href="/fournisseurs/Localite">fournisseurs par localité</a></li>
+                        <li><a class="dropdown-item" href="/fournisseurs/Pays">fournisseurs par Pays</a></li>
+                    </ul>
+                </li>
+
+
+                {# commande #}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Commandes</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/commandes">Toutes les commandes</a></li>
+                        <li><a class="dropdown-item" href="/commandes/raisonsociale">Nom des fournisseurs</a></li>
+                        <li><a class="dropdown-item" href="/commandes/pardate">Date</a></li>
+                        <li><a class="dropdown-item" href="/commandes/editeur">Editeur</a></li>
+                    </ul>
+                </li>  
+                      
+            </ul>
+        </div>
+        
+
+        {# si utilisateur connecté on affiche bouton déconnexion et nom utilisateur #}
+         {% if app.user %}
+            {{ app.user.userIdentifier }}
+            <a class="btn btn-lg btn-primary" type="submit" href="/logout"> Déconnexion </a>
+
+         {# sinon si l'utilisateur n'est pas connecter on affiche le bouton de connexion #}
+         {% else %}
+            <a class="btn btn-lg btn-primary" type="submit" href="/logout">connexion </a>
+         {% endif %}
+
+
+    </nav>
+</header>

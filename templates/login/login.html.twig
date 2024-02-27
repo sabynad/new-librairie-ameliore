@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  Log in!  {% endblock %}
+
+{% block body %}
+
+    <form method="post">
+
+        {% if error %}
+            <div class="alert alert-danger">{{ 
+            error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {# si l'utilisateur est connecter on affiche l'identifiant #}
+        {% if app.user %}
+            <div class="mb-3 titre-login">
+                vous êtes déjà identifier en tant que  {{ app.user.userIdentifier }}
+            </div>
+
+        {# Sinon l'utilisateur n'est pas connecter on affiche formulaire de connection #}
+        {% else %}
+        <h1 class="h3 mb-3 font-weight-normal titre-login">Merci de vous identifier</h1>
+
+        <div class="titre-login">
+            <label for="username">Email</label>
+            <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+            <label for="password">Password</label>
+            <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+            <input type="hidden" name="_target_path" value="/livres">
+            <button class="btn btn-lg btn-primary" type="submit">  Sign in  </button>
+        </div>
+        {% endif %}
+
+    </form>
+
+{% endblock %}
